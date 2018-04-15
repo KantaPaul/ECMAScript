@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 Practise</title>
+</head>
+<body>
+    <script>
+        // example arrow function
+        // simple function example
+        function square(r) {
+            let pi = 3.1416;
+            return pi * r * r;
+        }
+        console.log('--------------------- Simple Function ---------------------------');
+        console.log(square(7));
+
+        // arrow function
+        let square2 = (r) => {
+            let pi = 3.1416;
+            return pi * r * r;
+        }
+        console.log('----------------- Arrow Function ---------------------------');
+        console.log(square2(7));
+
+        let square3 = r => 3.1416 * r * r;
+        console.log('----------------- Arrow Function ---------------------------');
+        console.log(square3(7));
+
+        // Template Literals
+        let name = "Kanta";
+        console.log('----------------- Template Literals ---------------------------');
+        console.log('My name is ' + name);
+        console.log(`My name is ${name}`);
+        let a = 5,
+            b = 8;
+        console.log(`Sum = ${a + b}`);
+        console.log(`My name is ${name} 
+        Paul pobon`);
+        console.log('---------------------------');
+
+        // example of arrays
+        let sports = ['cricket', 'footboll'];
+        let foods = ['apple', ...sports, 'rice', 'grape'];
+        console.log(foods);
+
+        // example of class
+        class Person {
+            constructor (name, age, weight) {
+                this.name = name,
+                this.age = age,
+                this.weight = weight
+            }
+
+            displayWight () {
+                console.log(this.weight)
+            }
+
+            displayName() {
+                console.log(this.name);
+            }
+
+            displayAge() {
+                console.log(this.age);
+            }
+        }
+
+        // example of inheritance
+        class Programer extends Person {
+            constructor (name, age, weight, language) {
+                super(name, age, weight);
+                this.language = language
+            }
+
+            displayLanguage() {
+                console.log(this.language);
+            }
+        }
+
+        let pobon = new Person('pobon', 23, 80);
+        let kanta = new Programer('Kanta Pual', 23, 85, 'Javascript');
+        kanta.displayLanguage();
+        kanta.displayName();
+        kanta.displayAge();
+        kanta.displayWight();
+        console.log('---------------------------');
+        pobon.displayName();
+        pobon.displayAge();
+        pobon.displayWight();
+
+        // example Generators
+        console.log('---------------------------');
+        function* myGenerators() {
+            yield 'Apples';
+            yield 'Pineapple';
+            console.log('Hi i am generators');
+            yield 'Hilsha';
+        }
+
+        let generator = myGenerators();
+        console.log(generator.next());
+        console.log('---------------------------');
+        console.log(generator.next().value);
+        console.log(generator.next().value);
+        console.log('---------------------------');
+
+        function* genareteId() {
+            let id = 0;
+            while (id < 3) 
+                yield id++;
+        }
+        let idGenaretor = genareteId();
+        console.log(idGenaretor.next().value);
+        console.log(idGenaretor.next().value);
+        console.log(idGenaretor.next().value);
+        console.log(idGenaretor.next().value);
+    </script>
+
+</body>
+</html>
