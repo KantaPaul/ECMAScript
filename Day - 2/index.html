@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6</title>
+    <style scoped>
+        .box {
+            height: 50px;
+            width: 50px;
+            margin: 10% auto;
+            background-color: red;
+            transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            backface-visibility: hidden;
+        }
+        .box.opening {
+            transform: scale(2);
+            background-color: green;
+        }
+        .box.open {
+            transform: scale(3);
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
